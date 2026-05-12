@@ -1,7 +1,6 @@
 export const requiredEnv = {
   youtubeApiKey: process.env.YOUTUBE_API_KEY,
-  llmApiKey: process.env.LLM_API_KEY,
-  llmModel: process.env.LLM_MODEL,
+  mistralApiKey: process.env.MISTRAL_API_KEY,
 };
 
 export class MissingEnvError extends Error {
@@ -11,7 +10,7 @@ export class MissingEnvError extends Error {
   }
 }
 
-export function getRequiredEnv(name: "YOUTUBE_API_KEY" | "LLM_API_KEY" | "LLM_MODEL") {
+export function getRequiredEnv(name: "YOUTUBE_API_KEY" | "MISTRAL_API_KEY") {
   const value = process.env[name];
 
   if (!value) {

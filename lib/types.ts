@@ -16,3 +16,23 @@ export type YoutubeShort = {
 export type FeedResponse = {
   videos: YoutubeShort[];
 };
+
+export type VibeIntent = {
+  topics: string[];
+  tone: string[];
+  pacing: string;
+  emotionalEnergy: string;
+  intellectualDepth: string;
+  antiSignals: string[];
+  searchQueries: string[];
+  rerankGuidance: string[];
+};
+
+export type RerankedVideo = YoutubeShort & {
+  matchScore: number;
+  reason: string;
+};
+
+export type RerankResponse = {
+  videos: RerankedVideo[];
+};
